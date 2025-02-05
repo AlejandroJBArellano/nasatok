@@ -12,10 +12,13 @@ export interface APOD {
   url: string;
 }
 
-const APOD = ({ explanation, url, title }: APOD) => {
+const APOD = ({ explanation, url, title, copyright }: APOD) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
     <main className="h-screen overflow-hidden relative">
+      <div className="text-center absolute w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
+        <h2 className="text-2xl font-bold">Nasatok</h2>
+      </div>
       <img
         className="pointer-events-none absolute w-full object-cover h-full -z-10"
         src={url}
@@ -38,7 +41,10 @@ const APOD = ({ explanation, url, title }: APOD) => {
             <ShareIcon />
           </button>
         </div>
-        <p className="line-clamp-5" id="explanation">
+        {copyright && (
+          <p className="text-sm text-gray-700 italic">© {copyright}</p>
+        )}
+        <p className="line-clamp-4" id="explanation">
           {explanation}
         </p>
         <IonModal ref={modal} trigger="explanation">
