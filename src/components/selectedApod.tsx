@@ -1,3 +1,4 @@
+import { Share } from "@capacitor/share";
 import ShareIcon from "./shareIcon";
 
 export interface APOD {
@@ -20,7 +21,17 @@ const APOD = ({ date, explanation, media_type, url, title }: APOD) => {
       <div className="absolute rounded-t-2xl bg-white/50 w-full h-1/3 bottom-0 p-4">
         <div className="flex justify-between gap-2 items-center">
           <h1 className="font-bold text-3xl">{title}.</h1>
-          <button className="rounded-full bg-white/50 p-2 w-10 aspect-square h-10">
+          <button
+            onClick={async () => {
+              await Share.share({
+                title: title,
+                text: explanation,
+                url: url,
+                dialogTitle: "Share this article",
+              });
+            }}
+            className="rounded-full bg-white/50 p-2 w-10 aspect-square h-10"
+          >
             <ShareIcon />
           </button>
         </div>
