@@ -7,7 +7,7 @@ export interface APOD {
   copyright?: string;
   date: string;
   explanation: string;
-  media_type: "image" | "video";
+  media_type: string;
   title: string;
   url: string;
 }
@@ -15,10 +15,7 @@ export interface APOD {
 const APOD = ({ explanation, url, title, copyright }: APOD) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
-    <main className="h-screen overflow-hidden relative">
-      <div className="text-center absolute w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
-        <h2 className="text-2xl font-bold">Nasatok</h2>
-      </div>
+    <main className="h-full snap-always snap-center relative">
       <img
         className="pointer-events-none absolute w-full object-cover h-full -z-10"
         src={url}
