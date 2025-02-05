@@ -20,7 +20,7 @@ const Home = () => {
       <div className="text-center absolute w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
         <h2 className="text-2xl font-bold">Nasatok</h2>
       </div>
-      <div className="snap-y h-[100dvh] overflow-y-scroll h-screen">
+      <div className="snap-y snap-mandatory h-[100dvh] overflow-y-scroll h-screen">
         {dataMock.map((data, index) => (
           <APOD key={index} {...data} />
         ))}
