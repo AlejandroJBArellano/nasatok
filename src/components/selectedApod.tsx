@@ -1,4 +1,6 @@
 import { Share } from "@capacitor/share";
+import { IonButton, IonButtons, IonModal, IonToolbar } from "@ionic/react";
+import { useRef } from "react";
 import ShareIcon from "./shareIcon";
 
 export interface APOD {
@@ -10,7 +12,8 @@ export interface APOD {
   url: string;
 }
 
-const APOD = ({ date, explanation, media_type, url, title }: APOD) => {
+const APOD = ({ explanation, url, title }: APOD) => {
+  const modal = useRef<HTMLIonModalElement>(null);
   return (
     <main className="h-screen overflow-hidden relative">
       <img
@@ -35,7 +38,20 @@ const APOD = ({ date, explanation, media_type, url, title }: APOD) => {
             <ShareIcon />
           </button>
         </div>
-        <p className="line-clamp-5">{explanation}</p>
+        <p className="line-clamp-5" id="explanation">
+          {explanation}
+        </p>
+        <IonModal ref={modal} trigger="explanation">
+          <IonToolbar>
+            <h1 className="pl-3 font-bold">{title}</h1>
+            <IonButtons slot="end">
+              <IonButton onClick={() => modal.current?.dismiss()}>
+                Close
+              </IonButton>
+            </IonButtons>
+          </IonToolbar>
+          <p className="px-4 py-2 overflow-scroll">{explanation}</p>
+        </IonModal>
       </div>
     </main>
   );
