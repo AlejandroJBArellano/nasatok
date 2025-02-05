@@ -1,0 +1,7 @@
+{
+  "name": "nasatok",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
