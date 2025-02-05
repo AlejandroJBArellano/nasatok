@@ -1,4 +1,5 @@
 import { IonPage } from "@ionic/react";
+import ShareIcon from "../components/shareIcon";
 
 const Home = () => {
   return (
@@ -10,9 +11,14 @@ const Home = () => {
           alt=""
         />
         <div className="absolute rounded-t-2xl bg-white/50 w-full h-1/3 bottom-0 p-4">
-          <h1 className="font-bold text-3xl">
-            Partial Solar Eclipse over Argentina.
-          </h1>
+          <div className="flex justify-between gap-2 items-center">
+            <h1 className="font-bold text-3xl">
+              Partial Solar Eclipse over Argentina.
+            </h1>
+            <button className="rounded-full bg-white/50 p-2 w-10 aspect-square h-10">
+              <ShareIcon />
+            </button>
+          </div>
           <p className="line-clamp-5">
             What's happened to the Sun? Two days ago, parts of South America
             were treated to a partial solar eclipse -- where the Moon blocked
