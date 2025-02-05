@@ -18,7 +18,7 @@ const APOD = ({ date, explanation, media_type, url, title }: APOD) => {
         src={url}
         alt={title}
       />
-      <div className="absolute rounded-t-2xl bg-white/50 w-full h-1/3 bottom-0 p-4">
+      <div className="absolute rounded-t-2xl bg-white/30 backdrop-blur-lg w-full h-1/3 bottom-0 p-4 shadow-lg">
         <div className="flex justify-between gap-2 items-center">
           <h1 className="font-bold text-3xl">{title}.</h1>
           <button
@@ -30,7 +30,7 @@ const APOD = ({ date, explanation, media_type, url, title }: APOD) => {
                 dialogTitle: "Share this article",
               });
             }}
-            className="rounded-full bg-white/50 p-2 w-10 aspect-square h-10"
+            className="rounded-full bg-white/30 backdrop-blur-lg p-2 w-10 aspect-square h-10 shadow-md"
           >
             <ShareIcon />
           </button>
