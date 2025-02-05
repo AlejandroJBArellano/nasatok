@@ -10,15 +10,16 @@ export interface APOD {
   media_type: string;
   title: string;
   url: string;
+  hdurl: string;
 }
 
-const APOD = ({ explanation, url, title, copyright }: APOD) => {
+const APOD = ({ explanation, url, title, copyright, hdurl }: APOD) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
     <main className="h-full snap-always snap-center relative">
       <img
         className="pointer-events-none absolute w-full object-cover h-full -z-10"
-        src={url}
+        src={hdurl}
         alt={title}
       />
       <div className="absolute rounded-t-2xl bg-white/30 backdrop-blur-lg w-full h-1/3 bottom-0 p-4 shadow-lg">
