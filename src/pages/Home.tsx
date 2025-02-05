@@ -15,6 +15,7 @@ const dataMock = Array.from({ length: 10 }, (_, i) => ({
 }));
 
 const Home = () => {
+  const apiKey = import.meta.env.API_KEY as string;
   return (
     <IonPage>
       <div className="text-center absolute w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
