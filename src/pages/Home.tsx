@@ -20,7 +20,7 @@ const Home = () => {
   const fetchData = useCallback(async () => {
     setLoading(true);
     const data = await fetchAPODApi(apiKey);
-    setData(data);
+    setData(data.filter((el: IAPOD) => el.media_type === "image"));
     setLoading(false);
   }, [apiKey]);
 
