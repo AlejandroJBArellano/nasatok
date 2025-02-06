@@ -23,7 +23,7 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
         src={hdurl || url}
         alt={title}
       />
-      <div className="absolute rounded-t-2xl bg-white/30 backdrop-blur-lg w-full h-1/3 bottom-0 p-4 shadow-lg">
+      <div className="absolute rounded-t-2xl bg-white/30 backdrop-blur-lg w-full flex flex-col gap-2 bottom-0 p-4 shadow-lg">
         <div className="flex justify-between gap-2 items-center">
           <h1 className="font-bold text-3xl">{title}.</h1>
           <button
@@ -43,7 +43,7 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
         {copyright && (
           <p className="text-sm text-gray-700 italic">© {copyright}</p>
         )}
-        <p className="line-clamp-4" id={title}>
+        <p className="line-clamp-4 md:line-clamp-none" id={title}>
           {explanation}
         </p>
         <IonModal ref={modal} trigger={title}>
