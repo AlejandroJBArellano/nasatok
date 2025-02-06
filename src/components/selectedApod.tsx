@@ -3,7 +3,7 @@ import { IonButton, IonButtons, IonModal, IonToolbar } from "@ionic/react";
 import { useRef } from "react";
 import ShareIcon from "./shareIcon";
 
-export interface APOD {
+export interface IAPOD {
   copyright?: string;
   date: string;
   explanation: string;
@@ -13,7 +13,7 @@ export interface APOD {
   hdurl: string;
 }
 
-const APOD = ({ explanation, url, title, copyright, hdurl }: APOD) => {
+const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
     <main className="h-full snap-always snap-center relative">
