@@ -1,6 +1,6 @@
 import { IonPage } from "@ionic/react";
 import { useEffect, useState } from "react";
-import APOD, { IAPOD } from "../components/selectedApod";
+import APOD, { IAPOD } from "../components/apod";
 
 const fetchAPODApi = async (apiKey: string) => {
   const response = await fetch(
