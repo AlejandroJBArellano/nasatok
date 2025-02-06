@@ -20,6 +20,7 @@ const Home = () => {
   const fetchData = useCallback(async () => {
     setLoading(true);
     const data = await fetchAPODApi(apiKey);
+    setData(data);
     setLoading(false);
   }, [apiKey]);
 
