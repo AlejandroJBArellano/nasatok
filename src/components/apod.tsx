@@ -19,7 +19,7 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
     <main className="h-full snap-always snap-center relative">
       <img
         className="pointer-events-none absolute w-full object-cover h-full -z-10"
-        src={hdurl}
+        src={hdurl || url}
         alt={title}
       />
       <div className="absolute rounded-t-2xl bg-white/30 backdrop-blur-lg w-full h-1/3 bottom-0 p-4 shadow-lg">
