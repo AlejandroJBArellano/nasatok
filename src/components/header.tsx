@@ -3,9 +3,14 @@ import { useRef } from "react";
 const Header = () => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
-    <div className="text-center absolute flex justify-between items-center p-4 w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
+    <div className="text-center z-50 absolute flex justify-between items-center p-4 w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
       <h2 className="text-2xl font-bold">Nasatok</h2>
-      <button id="about">About</button>
+      <button
+        id="about"
+        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+      >
+        About
+      </button>
       <IonModal ref={modal} trigger="about">
         <IonToolbar>
           <h1 className="pl-3 font-bold">About</h1>
@@ -15,7 +20,7 @@ const Header = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-        <p className="px-4 py-2 overflow-scroll">"explanation"</p>
+        <p className="px-4 py-2 overflow-scroll">explanation</p>
       </IonModal>
     </div>
   );
