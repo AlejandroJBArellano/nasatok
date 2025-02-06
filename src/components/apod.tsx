@@ -42,10 +42,10 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
         {copyright && (
           <p className="text-sm text-gray-700 italic">© {copyright}</p>
         )}
-        <p className="line-clamp-4" id="explanation">
+        <p className="line-clamp-4" id={title}>
           {explanation}
         </p>
-        <IonModal ref={modal} trigger="explanation">
+        <IonModal ref={modal} trigger={title}>
           <IonToolbar>
             <h1 className="pl-3 font-bold">{title}</h1>
             <IonButtons slot="end">
