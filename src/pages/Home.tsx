@@ -1,5 +1,5 @@
 import { IonPage } from "@ionic/react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import APOD, { IAPOD } from "../components/apod";
 import Header from "../components/header";
 
@@ -12,18 +12,21 @@ const fetchAPODApi = async (apiKey: string) => {
 };
 
 const Home = () => {
-  const modal = useRef<HTMLIonModalElement>(null);
   const apiKey = import.meta.env.VITE_API_KEY as string;
 
   const [data, setData] = useState<IAPOD[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    fetchAPODApi(apiKey).then((response) => {
-      setData(response.filter((el: IAPOD) => el.media_type === "image"));
-      setLoading(false);
-    });
+  const fetchData = useCallback(async () => {
+    setLoading(true);
+    const data = await fetchAPODApi(apiKey);
+    setLoading(false);
   }, [apiKey]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   return (
     <IonPage>
       <Header />
