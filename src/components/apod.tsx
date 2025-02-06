@@ -55,6 +55,7 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
               </IonButton>
             </IonButtons>
           </IonToolbar>
+          <img className="mx-auto w-1/2" src={hdurl || url} alt={title} />
           <p className="px-4 py-2 overflow-scroll">{explanation}</p>
         </IonModal>
       </div>
