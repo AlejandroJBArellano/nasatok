@@ -32,7 +32,7 @@ const Home = () => {
           <div className="w-10 h-10 border-4 border-t-[4px] border-gray-200 rounded-full animate-spin"></div>
         </div>
       ) : (
-        <div className="snap-y snap-mandatory h-[100dvh] overflow-y-scroll h-screen">
+        <div className="snap-y no-scrollbar snap-mandatory h-[100dvh] overflow-y-scroll h-screen">
           {data.map((el) => (
             <APOD key={el.date} {...el} />
           ))}
