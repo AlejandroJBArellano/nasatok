@@ -24,8 +24,8 @@ const Home = () => {
         <h2 className="text-2xl font-bold">Nasatok</h2>
       </div>
       <div className="snap-y snap-mandatory h-[100dvh] overflow-y-scroll h-screen">
-        {data.map((data, index) => (
-          <APOD key={index} {...data} />
+        {data.map((el) => (
+          <APOD key={el.date} {...el} />
         ))}
       </div>
     </IonPage>
