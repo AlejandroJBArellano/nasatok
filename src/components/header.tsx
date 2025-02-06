@@ -3,7 +3,7 @@ import { useRef } from "react";
 const Header = ({ onClickRefresh }: { onClickRefresh: () => void }) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
-    <div className="text-center z-50 absolute flex justify-between items-center p-4 w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
+    <div className="text-center z-50 absolute flex justify-between items-center px-4 py-2 w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
       <h2 className="text-2xl font-bold">NasaTok</h2>
       <div className="flex flex-col gap-1.5 justify-end items-end">
         <button className="cursor-pointer hover:text-gray-600" id="about">
