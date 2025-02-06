@@ -17,8 +17,8 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchAPODApi(apiKey).then((data) => {
-      setData(data);
+    fetchAPODApi(apiKey).then((response) => {
+      setData(response.filter((el: IAPOD) => el.media_type === "image"));
       setLoading(false);
     });
   }, [apiKey]);
