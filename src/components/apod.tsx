@@ -1,5 +1,6 @@
 import { Share } from "@capacitor/share";
 import { IonButton, IonButtons, IonModal, IonToolbar } from "@ionic/react";
+import { AsyncImage } from "loadable-image";
 import { useRef } from "react";
 import ShareIcon from "./shareIcon";
 
@@ -17,7 +18,7 @@ const APOD = ({ explanation, url, title, copyright, hdurl }: IAPOD) => {
   const modal = useRef<HTMLIonModalElement>(null);
   return (
     <main className="h-full snap-always snap-center relative">
-      <img
+      <AsyncImage
         className="pointer-events-none absolute w-full object-cover h-full -z-10"
         src={hdurl || url}
         alt={title}
