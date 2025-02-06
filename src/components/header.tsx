@@ -5,7 +5,9 @@ const Header = () => {
   return (
     <div className="text-center z-50 absolute flex justify-between items-center p-4 w-full top-0 bg-white/30 backdrop-blur-lg p-1 shadow-lg">
       <h2 className="text-2xl font-bold">NasaTok</h2>
-      <button id="about">About</button>
+      <button className="cursor-pointer hover:text-gray-600" id="about">
+        About
+      </button>
       <IonModal ref={modal} trigger="about">
         <IonToolbar>
           <h1 className="pl-3 text-xl font-bold">About NasaTok</h1>
