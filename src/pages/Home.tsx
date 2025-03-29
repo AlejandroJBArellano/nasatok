@@ -42,6 +42,15 @@ const Home = () => {
           ))}
         </div>
       )}
+      {/* <IonFooter>
+        <IonToolbar>
+          <IonButtons slot="end">
+            <IonButton routerLink="/privacy-policy" fill="clear" size="small">
+              Política de Privacidad
+            </IonButton>
+          </IonButtons>
+        </IonToolbar>
+      </IonFooter> */}
     </IonPage>
   );
 };
