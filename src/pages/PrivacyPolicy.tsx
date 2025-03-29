@@ -21,7 +21,7 @@ const PrivacyPolicy: React.FC = () => {
           <IonTitle>Política de Privacidad</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+      <IonContent style={{ height: "100vh" }}>
         <h1>Política de Privacidad</h1>
 
         <p>Última actualización: {new Date().toLocaleDateString()}</p>
